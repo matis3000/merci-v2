@@ -1,0 +1,55 @@
+/* MERCI design system : tokens (copie de preview/tokens.css).
+   Retirés pour l'app : images de dégradé, formes et matières de bouton arrondi (DA du CRM : boutons plats).
+   Police servie localement depuis /assets. Préfixe --m-. */
+
+@font-face { font-family: "Figtree"; src: url("/assets/Figtree-Variable.ttf") format("truetype"); font-weight: 300 900; font-display: swap; }
+
+:root {
+  color-scheme: light;
+
+  /* ---------- Couleurs de marque (charte p.07) ---------- */
+  --m-vert: #53C973;        /* l'action, le geste */
+  --m-vert-pale: #D9EDBC;   /* la douceur */
+  --m-noir: #000000;        /* le texte, le logo */
+  --m-foret: #1E3F22;       /* fonds sombres */
+  --m-poudre: #EDC4C0;      /* fonds doux */
+  --m-corail: #D98F84;      /* jamais de texte dessus */
+  --m-creme: #F1EDE3;       /* surfaces */
+
+  /* ---------- Neutres web ---------- */
+  --m-toile: #FAF9F5;       /* fond de page */
+  --m-encre: #000000;
+  --m-encre-2: #45433E;     /* texte secondaire, 9.6:1 sur toile */
+  --m-encre-3: #6B6860;     /* légendes, 5.2:1 sur toile */
+  --m-filet: rgba(0, 0, 0, .08);
+
+  /* ---------- Typographie : Figtree seule, de 400 à 900 ---------- */
+  --m-police: "Figtree", "Aktiv Grotesk", -apple-system, "Helvetica Neue", Arial, sans-serif;
+  --m-t-geant: clamp(60px, 11.5vw, 176px);
+  --m-t-1: clamp(42px, 6.6vw, 104px);
+  --m-t-2: clamp(32px, 4.4vw, 64px);
+  --m-t-3: clamp(22px, 2.3vw, 30px);
+  --m-t-chapeau: clamp(19px, 1.7vw, 24px);
+  --m-t-corps: 17px;
+  --m-t-petit: 14px;
+  --m-t-micro: 12px;
+  --m-g-titre: 800;
+  --m-g-texte: 450;
+  --m-lh-titre: .98;
+  --m-lh-corps: 1.47;
+  --m-track-geant: -.055em;
+  --m-track-titre: -.035em;
+
+  /* ---------- Espacements (base 4) ---------- */
+  --m-1: 4px; --m-2: 8px; --m-3: 12px; --m-4: 16px; --m-5: 20px; --m-6: 24px;
+  --m-8: 32px; --m-10: 40px; --m-12: 48px; --m-16: 64px; --m-24: 96px; --m-32: 128px;
+
+  /* ---------- Mouvement ---------- */
+  --m-d-vif: 220ms;
+
+  --m-focus: 0 0 0 3px var(--m-toile), 0 0 0 5.5px var(--m-noir);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root { --m-d-vif: 1ms; }
+}

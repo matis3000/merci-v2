@@ -1,0 +1,64 @@
+{
+  "results": [
+    {
+      "siren": "900000001",
+      "nom_complet": "ENTREPRISE TEST 1",
+      "activite_principale": "62.01Z",
+      "tranche_effectif_salarie": "32",
+      "etat_administratif": "A",
+      "siege": {"departement": "67", "code_postal": "67000", "libelle_commune": "STRASBOURG", "etat_administratif": "A"},
+      "matching_etablissements": [
+        {"departement": "67", "code_postal": "67000", "libelle_commune": "STRASBOURG", "etat_administratif": "A"}
+      ]
+    },
+    {
+      "siren": "900000002",
+      "nom_complet": "ENTREPRISE TEST 2",
+      "activite_principale": "41.20A",
+      "tranche_effectif_salarie": "21",
+      "etat_administratif": "A",
+      "siege": {"departement": "67", "code_postal": "67120", "libelle_commune": "MOLSHEIM", "etat_administratif": "A"},
+      "matching_etablissements": [
+        {"departement": "67", "code_postal": "67120", "libelle_commune": "MOLSHEIM", "etat_administratif": "A"}
+      ]
+    },
+    {
+      "siren": "900000003",
+      "nom_complet": "ADMINISTRATION TEST 3",
+      "activite_principale": "84.11Z",
+      "tranche_effectif_salarie": "41",
+      "etat_administratif": "A",
+      "siege": {"departement": "67", "code_postal": "67000", "libelle_commune": "STRASBOURG", "etat_administratif": "A"},
+      "matching_etablissements": [
+        {"departement": "67", "code_postal": "67000", "libelle_commune": "STRASBOURG", "etat_administratif": "A"}
+      ]
+    },
+    {
+      "siren": "900000004",
+      "nom_complet": "ENTREPRISE TEST 4",
+      "activite_principale": "70.22Z",
+      "tranche_effectif_salarie": "42",
+      "etat_administratif": "A",
+      "siege": {"departement": "75", "code_postal": "75001", "libelle_commune": "PARIS", "etat_administratif": "A"},
+      "matching_etablissements": [
+        {"departement": "75", "code_postal": "75001", "libelle_commune": "PARIS", "etat_administratif": "A"},
+        {"departement": "67", "code_postal": "67500", "libelle_commune": "HAGUENAU", "etat_administratif": "F"}
+      ]
+    },
+    {
+      "siren": "900000005",
+      "nom_complet": "ENTREPRISE TEST 5",
+      "activite_principale": "72.19Z",
+      "tranche_effectif_salarie": "12",
+      "etat_administratif": "A",
+      "siege": {"departement": "75", "code_postal": "75002", "libelle_commune": "PARIS", "etat_administratif": "A"},
+      "matching_etablissements": [
+        {"departement": "67", "code_postal": "67500", "libelle_commune": "HAGUENAU", "etat_administratif": "A"}
+      ]
+    }
+  ],
+  "total_results": 5,
+  "page": 1,
+  "per_page": 25,
+  "total_pages": 1
+}

@@ -1,0 +1,189 @@
+/* MERCI design system v2 "galet" : composants.
+   Toutes les classes sont préfixées .m- . Dépend de tokens.css. */
+
+/* ---------- Base ---------- */
+.m-base {
+  margin: 0; background: var(--m-toile); color: var(--m-encre);
+  font-family: var(--m-police); font-size: var(--m-t-corps); font-weight: var(--m-g-texte);
+  line-height: var(--m-lh-corps); letter-spacing: -.011em;
+  -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
+  font-optical-sizing: auto;
+}
+.m-base *, .m-base *::before, .m-base *::after { box-sizing: border-box; }
+.m-base :focus-visible { outline: none; box-shadow: var(--m-focus); }
+.m-base ::selection { background: var(--m-vert); color: var(--m-noir); }
+
+/* ---------- Typographie ---------- */
+.m-geant, .m-t1, .m-t2, .m-t3 { font-weight: var(--m-g-titre); margin: 0; text-wrap: balance; }
+.m-geant { font-size: var(--m-t-geant); line-height: .9; letter-spacing: var(--m-track-geant); font-weight: 850; }
+.m-t1 { font-size: var(--m-t-1); line-height: var(--m-lh-titre); letter-spacing: var(--m-track-titre); }
+.m-t2 { font-size: var(--m-t-2); line-height: 1.02; letter-spacing: -.03em; }
+.m-t3 { font-size: var(--m-t-3); line-height: 1.12; letter-spacing: -.02em; font-weight: 750; }
+.m-chapeau { font-size: var(--m-t-chapeau); line-height: 1.38; letter-spacing: -.016em; font-weight: 500; color: var(--m-encre-2); margin: 0; max-width: 34ch; text-wrap: pretty; }
+.m-chapeau b { color: var(--m-encre); font-weight: 700; }
+.m-texte { margin: 0; max-width: 60ch; text-wrap: pretty; }
+.m-petit { font-size: var(--m-t-petit); line-height: 1.43; color: var(--m-encre-2); margin: 0; }
+.m-micro { font-size: var(--m-t-micro); line-height: 1.33; color: var(--m-encre-3); font-weight: 600; letter-spacing: 0; margin: 0; }
+.m-chiffre { font-variant-numeric: tabular-nums; }
+
+/* ---------- Galet : le bouton ---------- */
+.m-galet {
+  --galet-fond: var(--m-vert); --galet-encre: var(--m-noir); --galet-teinte: 83 201 115;
+  position: relative; isolation: isolate; display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  min-height: 56px; padding: 0 30px; border: 0; border-radius: var(--m-r-galet); cursor: pointer;
+  font: 700 17px/1 var(--m-police); letter-spacing: -.015em; text-decoration: none; white-space: nowrap;
+  color: var(--galet-encre);
+  background: var(--m-lumiere), var(--m-creux), var(--galet-fond);
+  box-shadow: var(--m-relief), 0 1px 1px rgb(0 0 0 / .08), 0 10px 22px -8px rgb(var(--galet-teinte) / .65), 0 22px 40px -22px rgb(0 0 0 / .35);
+  transition: transform var(--m-d-ressort) var(--m-ressort), box-shadow var(--m-d-doux) var(--m-doux), filter var(--m-d-vif) ease;
+  -webkit-tap-highlight-color: transparent; user-select: none;
+}
+.m-galet:hover { transform: translateY(-2px) scale(1.015); box-shadow: var(--m-relief), 0 1px 1px rgb(0 0 0 / .08), 0 16px 30px -10px rgb(var(--galet-teinte) / .7), 0 30px 50px -24px rgb(0 0 0 / .38); }
+.m-galet:active { transform: translateY(1px) scale(.955); transition-duration: 120ms, 120ms, 120ms; transition-timing-function: ease-out; box-shadow: inset 0 3px 8px rgb(0 0 0 / .22), 0 2px 6px -2px rgb(var(--galet-teinte) / .5); }
+.m-galet:focus-visible { box-shadow: var(--m-relief), var(--m-focus); }
+.m-galet[disabled], .m-galet[aria-disabled="true"] { --galet-fond: #E4E1DA; --galet-encre: var(--m-encre-3); --galet-teinte: 0 0 0; cursor: not-allowed; transform: none; box-shadow: inset 0 1px 0 rgb(255 255 255 / .6); }
+.m-galet--noir { --galet-fond: #000; --galet-encre: var(--m-creme); --galet-teinte: 0 0 0; }
+.m-galet--foret { --galet-fond: var(--m-foret); --galet-encre: var(--m-vert-pale); --galet-teinte: 30 63 34; }
+.m-galet--creme { --galet-fond: var(--m-creme); --galet-encre: var(--m-noir); --galet-teinte: 120 100 70; }
+.m-galet--verre {
+  --galet-encre: var(--m-noir); background: var(--m-verre); backdrop-filter: var(--m-verre-flou); -webkit-backdrop-filter: var(--m-verre-flou);
+  box-shadow: var(--m-verre-bord), 0 8px 24px -12px rgb(0 0 0 / .25);
+}
+.m-galet--l { min-height: 64px; padding: 0 38px; font-size: 19px; }
+.m-galet--s { min-height: 44px; padding: 0 20px; font-size: 15px; }
+.m-galet--rond { width: 56px; padding: 0; }
+.m-galet--rond.m-galet--s { width: 44px; }
+.m-galet svg { flex: none; }
+
+/* Lien texte */
+.m-lien { color: inherit; font-weight: 650; text-decoration: none; background: linear-gradient(currentColor, currentColor) 0 100% / 0 1.5px no-repeat; padding-bottom: 2px; transition: background-size var(--m-d-doux) var(--m-doux); }
+.m-lien:hover { background-size: 100% 1.5px; }
+
+/* ---------- Puces (choix multiples) ---------- */
+.m-puce {
+  display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 18px 0 14px;
+  border: 0; border-radius: var(--m-r-galet); cursor: pointer; font: 600 15px/1 var(--m-police); letter-spacing: -.01em;
+  background: #fff; color: var(--m-encre); box-shadow: inset 0 0 0 1px var(--m-filet), var(--m-ombre-1);
+  transition: transform var(--m-d-ressort) var(--m-ressort), background-color var(--m-d-doux) var(--m-doux), color var(--m-d-doux) var(--m-doux);
+}
+.m-puce:active { transform: scale(.94); transition-duration: 120ms; }
+.m-puce img { width: 26px; height: 26px; border-radius: 8px; }
+.m-puce[aria-pressed="true"] { background: var(--m-noir); color: var(--m-creme); box-shadow: 0 8px 18px -8px rgb(0 0 0 / .5); }
+.m-puce--sans-icone { padding: 0 18px; }
+
+/* ---------- Segment à galet glissant ---------- */
+.m-segment {
+  --x: 0px; --w: 0px; position: relative; display: inline-flex; padding: 4px; border-radius: var(--m-r-galet);
+  background: rgb(0 0 0 / .06); box-shadow: inset 0 1px 2px rgb(0 0 0 / .08);
+}
+.m-segment::before {
+  content: ""; position: absolute; top: 4px; bottom: 4px; left: 0; width: var(--w); transform: translateX(var(--x));
+  border-radius: var(--m-r-galet); background: var(--m-lumiere), #fff; box-shadow: var(--m-ombre-1), inset 0 1px 0 #fff;
+  transition: transform var(--m-d-ressort) var(--m-ressort), width var(--m-d-ressort) var(--m-ressort);
+}
+.m-segment button {
+  position: relative; z-index: 1; appearance: none; border: 0; background: none; cursor: pointer;
+  min-height: 40px; padding: 0 18px; border-radius: var(--m-r-galet); font: 600 15px/1 var(--m-police); letter-spacing: -.01em; color: var(--m-encre-2);
+  transition: color var(--m-d-doux) var(--m-doux);
+}
+.m-segment button[aria-pressed="true"] { color: var(--m-encre); }
+.m-segment--sombre { background: rgb(255 255 255 / .1); }
+.m-segment--sombre::before { background: var(--m-lumiere), var(--m-vert); }
+.m-segment--sombre button { color: var(--m-scene-encre-2); }
+.m-segment--sombre button[aria-pressed="true"] { color: #000; }
+
+/* ---------- Interrupteur ---------- */
+.m-interrupteur { display: inline-flex; align-items: center; gap: 12px; cursor: pointer; font-weight: 550; }
+.m-interrupteur input { appearance: none; margin: 0; position: relative; flex: none; width: 52px; height: 32px; border-radius: var(--m-r-galet); background: #E4E1DA; box-shadow: inset 0 1px 3px rgb(0 0 0 / .12); cursor: pointer; transition: background-color var(--m-d-doux) var(--m-doux); }
+.m-interrupteur input::after { content: ""; position: absolute; top: 2px; left: 2px; width: 28px; height: 28px; border-radius: 50%; background: var(--m-lumiere), #fff; box-shadow: 0 3px 8px rgb(0 0 0 / .18), 0 1px 1px rgb(0 0 0 / .08); transition: transform var(--m-d-ressort) var(--m-ressort), width 200ms var(--m-sortie); }
+.m-interrupteur input:active::after { width: 34px; }
+.m-interrupteur input:checked { background: var(--m-vert); }
+.m-interrupteur input:checked::after { transform: translateX(20px); }
+.m-interrupteur input:checked:active::after { transform: translateX(14px); }
+
+/* ---------- Champ à étiquette flottante ---------- */
+.m-champ { position: relative; display: block; }
+.m-champ input {
+  width: 100%; height: 62px; padding: 24px 20px 8px; border: 0; border-radius: var(--m-r-m);
+  font: 500 17px/1 var(--m-police); color: var(--m-encre); background: #fff;
+  box-shadow: inset 0 0 0 1px var(--m-filet), var(--m-ombre-1);
+  transition: box-shadow var(--m-d-doux) var(--m-doux);
+}
+.m-champ input:focus { outline: none; box-shadow: inset 0 0 0 2px var(--m-noir), 0 0 0 5px rgb(83 201 115 / .35); }
+.m-champ label { position: absolute; left: 20px; top: 21px; font-size: 17px; font-weight: 500; color: var(--m-encre-3); pointer-events: none; transform-origin: 0 0; transition: transform var(--m-d-doux) var(--m-doux), color var(--m-d-doux) var(--m-doux); }
+.m-champ input:focus + label, .m-champ input:not(:placeholder-shown) + label { transform: translateY(-11px) scale(.74); color: var(--m-encre-2); }
+.m-champ--erreur input { box-shadow: inset 0 0 0 2px #B3261E; }
+.m-champ--erreur label { color: #B3261E; }
+
+/* Case à cocher galet */
+.m-case { display: flex; gap: 12px; align-items: flex-start; font-size: 15px; line-height: 1.4; cursor: pointer; }
+.m-case input { appearance: none; flex: none; margin: 0; width: 26px; height: 26px; border-radius: 9px; background: #fff; box-shadow: inset 0 0 0 1.5px rgb(0 0 0 / .3); cursor: pointer; display: grid; place-items: center; transition: background-color var(--m-d-doux) var(--m-doux), transform var(--m-d-ressort) var(--m-ressort); }
+.m-case input::after { content: ""; width: 12px; height: 7px; border: solid #000; border-width: 0 0 2.5px 2.5px; transform: translateY(-1px) rotate(-45deg) scale(0); transition: transform var(--m-d-ressort) var(--m-ressort); }
+.m-case input:checked { background: var(--m-vert); box-shadow: none; }
+.m-case input:checked::after { transform: translateY(-1px) rotate(-45deg) scale(1); }
+.m-case input:active { transform: scale(.88); }
+
+/* ---------- Surfaces ---------- */
+.m-carte { position: relative; border-radius: var(--m-r-l); background: #fff; padding: 32px; box-shadow: var(--m-ombre-1); }
+.m-carte--creme { background: var(--m-creme); box-shadow: none; }
+.m-carte--pale { background: var(--m-vert-pale); box-shadow: none; }
+.m-carte--poudre { background: var(--m-poudre); box-shadow: none; }
+.m-carte--noir { background: #000; color: var(--m-scene-encre); box-shadow: none; }
+.m-carte--foret { background: var(--m-foret); color: var(--m-creme); box-shadow: none; }
+.m-scene { position: relative; border-radius: var(--m-r-xl); overflow: hidden; isolation: isolate; }
+.m-scene--noir { background: #000; color: var(--m-scene-encre); }
+
+/* Verre : barres flottantes uniquement */
+.m-verre { background: var(--m-verre); backdrop-filter: var(--m-verre-flou); -webkit-backdrop-filter: var(--m-verre-flou); box-shadow: var(--m-verre-bord), 0 10px 30px -14px rgb(0 0 0 / .3); }
+.m-verre--sombre { background: var(--m-verre-sombre); color: #fff; box-shadow: inset 0 0 0 .5px rgb(255 255 255 / .2), 0 10px 30px -14px rgb(0 0 0 / .5); }
+
+/* ---------- Dégradés grainés ---------- */
+.m-fond { position: relative; isolation: isolate; background-size: cover; background-position: center; }
+.m-fond::after { content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none; background-image: var(--m-grain); opacity: .2; mix-blend-mode: multiply; border-radius: inherit; }
+.m-fond--vert-lumiere { background-color: var(--m-vert-pale); background-image: var(--m-deg-vert-lumiere); }
+.m-fond--rose-vert { background-color: var(--m-vert); background-image: var(--m-deg-rose-vert); }
+.m-fond--rose-doux { background-color: var(--m-poudre); background-image: var(--m-deg-rose-doux); }
+.m-fond--vert-profond { background-color: var(--m-foret); background-image: var(--m-deg-vert-profond); color: var(--m-creme); }
+
+/* ---------- Galet organique (nuancier, décor) ---------- */
+.m-pierre { border-radius: var(--m-forme-1); background: var(--m-lumiere), var(--m-creux), var(--pierre, var(--m-vert)); box-shadow: var(--m-relief), var(--m-ombre-2); animation: m-respire 9s ease-in-out infinite alternate; }
+.m-pierre:nth-child(3n+2) { border-radius: var(--m-forme-2); animation-duration: 11s; animation-delay: -3s; }
+.m-pierre:nth-child(3n) { border-radius: var(--m-forme-3); animation-duration: 13s; animation-delay: -6s; }
+@keyframes m-respire {
+  0% { border-radius: var(--m-forme-1); }
+  50% { border-radius: var(--m-forme-2); }
+  100% { border-radius: var(--m-forme-3); }
+}
+
+/* ---------- Icône de cause (squircle) ---------- */
+.m-cause { display: grid; justify-items: center; gap: 10px; font-size: 13px; font-weight: 600; text-align: center; color: var(--m-encre); }
+.m-cause img { width: 100%; max-width: 96px; aspect-ratio: 1; border-radius: 28%; box-shadow: var(--m-ombre-2); transition: transform var(--m-d-ressort) var(--m-ressort); }
+.m-cause:hover img { transform: translateY(-4px) rotate(-3deg) scale(1.04); }
+
+/* ---------- Suivi d'un don : billes ---------- */
+.m-suivi { --p: 0; display: grid; gap: 12px; }
+.m-suivi__piste { position: relative; height: 12px; border-radius: var(--m-r-galet); background: rgb(0 0 0 / .08); box-shadow: inset 0 1px 2px rgb(0 0 0 / .1); }
+.m-suivi__barre { position: absolute; inset: 0 auto 0 0; width: calc(var(--p) * 100%); min-width: 12px; border-radius: inherit; background: var(--m-lumiere), var(--m-vert); box-shadow: 0 4px 10px -3px rgb(83 201 115 / .7); transition: width var(--m-d-rebond) var(--m-ressort); }
+.m-suivi__etapes { display: flex; justify-content: space-between; list-style: none; margin: 0; padding: 0; font-size: 13px; font-weight: 600; color: var(--m-encre-3); }
+.m-suivi__etapes li { transition: color var(--m-d-doux) var(--m-doux); }
+.m-suivi__etapes li.fait, .m-suivi__etapes li[aria-current] { color: var(--m-encre); }
+
+/* ---------- Feuille (panneau du bas) ---------- */
+.m-feuille { position: fixed; z-index: 81; left: 50%; bottom: 0; width: min(560px, 100%); max-height: calc(100dvh - 24px); overflow: auto; translate: -50% 0;
+  background: var(--m-toile); border-radius: var(--m-r-xl) var(--m-r-xl) 0 0; padding: 12px 28px 28px; box-shadow: var(--m-ombre-3);
+  transition: transform var(--m-d-ressort) var(--m-ressort), opacity var(--m-d-vif) ease; }
+.m-feuille::before { content: ""; display: block; width: 40px; height: 5px; border-radius: 5px; background: rgb(0 0 0 / .18); margin: 0 auto 18px; }
+.m-feuille[data-etat="ferme"] { transform: translateY(105%); opacity: 0; pointer-events: none; transition: transform 380ms var(--m-sortie), opacity 300ms ease; }
+.m-voile { position: fixed; inset: 0; z-index: 80; background: rgb(0 0 0 / .32); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); transition: opacity var(--m-d-doux) var(--m-doux); }
+.m-voile[data-etat="ferme"] { opacity: 0; pointer-events: none; }
+@media (min-width: 700px) {
+  .m-feuille { bottom: 24px; border-radius: var(--m-r-xl); }
+}
+
+/* ---------- Apparition au défilement ---------- */
+.m-revele { opacity: 0; transform: translateY(28px) scale(.985); filter: blur(6px); transition: opacity 900ms var(--m-doux), transform 1100ms var(--m-doux), filter 900ms var(--m-doux); transition-delay: calc(var(--i, 0) * 70ms); }
+.m-revele.est-visible { opacity: 1; transform: none; filter: none; }
+@media (prefers-reduced-motion: reduce) {
+  .m-revele { opacity: 1; transform: none; filter: none; }
+  .m-pierre { animation: none; }
+}

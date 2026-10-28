@@ -1,0 +1,102 @@
+/* MERCI design system v2 "galet" : tokens.
+   Même marque que la v1 (charte oct. 2026), écriture web : une seule famille, matières, ressorts.
+   Préfixe --m- pour ne jamais entrer en collision avec Tailwind/shadcn. */
+
+@font-face { font-family: "Figtree"; src: url("assets/Figtree-Variable.ttf") format("truetype"); font-weight: 300 900; font-display: swap; }
+
+:root {
+  color-scheme: light;
+
+  /* ---------- Couleurs de marque (charte p.07) ---------- */
+  --m-vert: #53C973;        /* l'action, le geste */
+  --m-vert-pale: #D9EDBC;   /* la douceur */
+  --m-noir: #000000;        /* le texte, le logo */
+  --m-foret: #1E3F22;       /* dégradé, fonds sombres */
+  --m-poudre: #EDC4C0;      /* dégradé, fonds doux */
+  --m-corail: #D98F84;      /* dégradé uniquement, jamais de texte dessus */
+  --m-creme: #F1EDE3;       /* dégradé, surfaces */
+
+  /* ---------- Neutres web ---------- */
+  --m-toile: #FAF9F5;       /* fond de page */
+  --m-encre: #000000;
+  --m-encre-2: #45433E;     /* texte secondaire, 9.6:1 sur toile */
+  --m-encre-3: #6B6860;     /* légendes, 5.2:1 sur toile */
+  --m-filet: rgba(0, 0, 0, .08);
+  --m-scene: #000000;       /* sections sombres */
+  --m-scene-encre: #F1EDE3;
+  --m-scene-encre-2: #A9A59B;
+
+  /* ---------- Dégradés signature : fonds uniquement, toujours grainés ---------- */
+  --m-deg-vert-lumiere: url("assets/deg-vert-lumiere.jpg");
+  --m-deg-rose-vert: url("assets/deg-rose-vert.jpg");
+  --m-deg-rose-doux: url("assets/deg-rose-doux.jpg");
+  --m-deg-vert-profond: url("assets/deg-vert-profond.jpg");
+  --m-grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .6 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+
+  /* ---------- Typographie : Figtree seule, de 400 à 900 ---------- */
+  --m-police: "Figtree", "Aktiv Grotesk", -apple-system, "Helvetica Neue", Arial, sans-serif;
+  --m-t-geant: clamp(60px, 11.5vw, 176px);
+  --m-t-1: clamp(42px, 6.6vw, 104px);
+  --m-t-2: clamp(32px, 4.4vw, 64px);
+  --m-t-3: clamp(22px, 2.3vw, 30px);
+  --m-t-chapeau: clamp(19px, 1.7vw, 24px);
+  --m-t-corps: 17px;
+  --m-t-petit: 14px;
+  --m-t-micro: 12px;
+  --m-g-titre: 800;
+  --m-g-texte: 450;
+  --m-lh-titre: .98;
+  --m-lh-corps: 1.47;
+  --m-track-geant: -.055em;
+  --m-track-titre: -.035em;
+
+  /* ---------- Espacements (base 4) ---------- */
+  --m-1: 4px; --m-2: 8px; --m-3: 12px; --m-4: 16px; --m-5: 20px; --m-6: 24px;
+  --m-8: 32px; --m-10: 40px; --m-12: 48px; --m-16: 64px; --m-24: 96px; --m-32: 128px;
+
+  /* ---------- Formes : le galet ---------- */
+  --m-r-galet: 999px;      /* boutons, puces, interrupteurs, barres */
+  --m-r-xl: 44px;          /* scènes, grandes cartes */
+  --m-r-l: 32px;           /* cartes */
+  --m-r-m: 22px;           /* champs, tuiles */
+  --m-r-s: 14px;           /* pictos */
+  /* galets organiques (nuancier, décor) : jamais deux pareils */
+  --m-forme-1: 58% 42% 55% 45% / 52% 47% 53% 48%;
+  --m-forme-2: 46% 54% 42% 58% / 56% 44% 56% 44%;
+  --m-forme-3: 52% 48% 60% 40% / 45% 55% 45% 55%;
+
+  /* ---------- Matière galet : lumière en haut à gauche, ombre portée teintée ---------- */
+  --m-lumiere: radial-gradient(120% 110% at 28% 8%, rgb(255 255 255 / .5), rgb(255 255 255 / 0) 55%);
+  --m-creux: radial-gradient(110% 90% at 70% 112%, rgb(0 0 0 / .2), rgb(0 0 0 / 0) 60%);
+  --m-relief: inset 0 1.5px 0 rgb(255 255 255 / .6), inset 0 -10px 18px -10px rgb(0 0 0 / .28);
+  --m-ombre-1: 0 1px 1px rgb(0 0 0 / .06), 0 4px 10px -4px rgb(0 0 0 / .14);
+  --m-ombre-2: 0 1px 2px rgb(0 0 0 / .06), 0 12px 28px -10px rgb(0 0 0 / .22), 0 30px 60px -30px rgb(0 0 0 / .25);
+  --m-ombre-3: 0 2px 4px rgb(0 0 0 / .06), 0 24px 48px -16px rgb(0 0 0 / .28), 0 60px 120px -40px rgb(0 0 0 / .3);
+  /* verre (barres flottantes) */
+  --m-verre: rgb(255 255 255 / .58);
+  --m-verre-sombre: rgb(30 30 28 / .5);
+  --m-verre-flou: blur(22px) saturate(1.8);
+  --m-verre-bord: inset 0 0 0 .5px rgb(255 255 255 / .7), inset 0 1px 0 rgb(255 255 255 / .9);
+
+  /* ---------- Mouvement : des ressorts, pas des courbes ---------- */
+  /* doux : 640 ms, pas de dépassement visible. Ouvertures, fondus, changements d'état. */
+  --m-doux: linear(0, .01, .036, .074, .121, .174, .231, .289, .348, .406, .463, .516, .567, .615, .659, .7, .738, .772, .803, .83, .855, .877, .896, .913, .928, .941, .952, .962, .97, .977, .983, .988, .992, .995, .998, 1, 1.001, 1.003, 1.004, 1.004, 1.005, 1.005, 1.005, 1.004, 1.004, 1);
+  /* ressort : 740 ms, 8 % de dépassement. Galets pressés, indicateurs qui glissent. */
+  --m-ressort: linear(0, .019, .068, .14, .227, .323, .421, .519, .612, .699, .777, .846, .905, .954, .994, 1.026, 1.05, 1.066, 1.077, 1.082, 1.083, 1.082, 1.077, 1.071, 1.063, 1.055, 1.047, 1.039, 1.031, 1.024, 1.018, 1.012, 1.007, 1.003, 1, .998, .996, .994, .994, .993, .993, .994, .995, .996, .997, 1);
+  /* rebond : 950 ms, 20 % de dépassement. Réservé aux moments de merci. */
+  --m-rebond: linear(0, .035, .128, .26, .412, .571, .724, .862, .978, 1.07, 1.138, 1.18, 1.202, 1.204, 1.193, 1.171, 1.142, 1.11, 1.077, 1.047, 1.02, .998, .98, .968, .961, .958, .959, .962, .967, .973, .98, .986, .992, .998, 1.002, 1.005, 1.007, 1.008, 1.009, 1.008, 1.006, 1.004, 1.002, 1);
+  --m-d-doux: 640ms;
+  --m-d-ressort: 740ms;
+  --m-d-rebond: 950ms;
+  --m-sortie: cubic-bezier(.32, .72, 0, 1);  /* départs et disparitions */
+  --m-d-vif: 220ms;
+
+  --m-focus: 0 0 0 3px var(--m-toile), 0 0 0 5.5px var(--m-noir);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --m-doux: ease; --m-ressort: ease; --m-rebond: ease;
+    --m-d-doux: 1ms; --m-d-ressort: 1ms; --m-d-rebond: 1ms; --m-d-vif: 1ms;
+  }
+}

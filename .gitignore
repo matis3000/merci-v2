@@ -1,0 +1,10 @@
+.DS_Store
+__pycache__/
+.pytest_cache/
+*.db
+.env
+.env.local
+node_modules/
+.next/
+*.tsbuildinfo
+.claude-flow/

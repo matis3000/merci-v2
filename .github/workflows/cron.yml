@@ -1,0 +1,22 @@
+# Tâches planifiées du CRM (le plan Hobby de Vercel limite ses propres crons à un par jour).
+# Secret du dépôt : CRON_SECRET (même valeur que la variable CRON_SECRET du projet Vercel).
+name: cron
+on:
+  schedule:
+    - cron: "*/15 * * * *"   # relances et reprise de la synchro HubSpot
+    - cron: "0 4 * * *"      # prospection quotidienne (6 h à Paris en été)
+  workflow_dispatch:
+jobs:
+  appel:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Tick
+        if: github.event.schedule != '0 4 * * *'
+        run: >-
+          curl -fsS -X POST https://merci-v2.vercel.app/api/cron/tick
+          -H "X-Cron-Secret: ${{ secrets.CRON_SECRET }}"
+      - name: Prospection
+        if: github.event.schedule == '0 4 * * *'
+        run: >-
+          curl -fsS -X POST https://merci-v2.vercel.app/api/cron/prospection
+          -H "X-Cron-Secret: ${{ secrets.CRON_SECRET }}"

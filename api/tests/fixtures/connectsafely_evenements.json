@@ -1,0 +1,65 @@
+{
+  "_source": "Structure documentée : connectsafely.ai/docs/webhooks/events (seul message.received existe). Valeurs fictives ; sender.id reprend l'identifiant LinkedIn du prospect de test.",
+  "message_recu": {
+    "event": "message.received",
+    "object": "event",
+    "data": {
+      "id": "urn:li:messagingMessage:test-1",
+      "message_urn": "urn:li:messagingMessage:test-1",
+      "account_id": "compte-test",
+      "provider": "LINKEDIN",
+      "sender": {
+        "id": "factice-personne-1",
+        "name": "Prénom1 Test"
+      },
+      "body": "Bonjour, volontiers pour une démo la semaine prochaine.",
+      "timestamp": "2026-10-12T08:00:00.000Z",
+      "conversation_id": "urn:li:messagingThread:test-1",
+      "attachments": []
+    }
+  },
+  "message_autre_compte": {
+    "event": "message.received",
+    "object": "event",
+    "data": {
+      "id": "urn:li:messagingMessage:test-2",
+      "message_urn": "urn:li:messagingMessage:test-2",
+      "account_id": "autre-compte",
+      "provider": "LINKEDIN",
+      "sender": {
+        "id": "factice-personne-1",
+        "name": "Prénom1 Test"
+      },
+      "body": "Message reçu sur un autre compte LinkedIn.",
+      "timestamp": "2026-10-12T08:00:00.000Z",
+      "conversation_id": "urn:li:messagingThread:test-2",
+      "attachments": []
+    }
+  },
+  "message_expediteur_inconnu": {
+    "event": "message.received",
+    "object": "event",
+    "data": {
+      "id": "urn:li:messagingMessage:test-3",
+      "message_urn": "urn:li:messagingMessage:test-3",
+      "account_id": "compte-test",
+      "provider": "LINKEDIN",
+      "sender": {
+        "id": "factice-inconnu",
+        "name": "Inconnu Test"
+      },
+      "body": "Bonjour, qui êtes-vous ?",
+      "timestamp": "2026-10-12T08:00:00.000Z",
+      "conversation_id": "urn:li:messagingThread:test-3",
+      "attachments": []
+    }
+  },
+  "evenement_non_gere": {
+    "event": "connection.accepted",
+    "object": "event",
+    "data": {
+      "account_id": "compte-test",
+      "profileUrn": "factice-personne-1"
+    }
+  }
+}

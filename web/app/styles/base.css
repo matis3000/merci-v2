@@ -1,0 +1,26 @@
+/* Base typographique de MERCI : lignes 1 à 27 de preview/components.css, rien d'autre. */
+
+/* ---------- Base ---------- */
+.m-base {
+  margin: 0; background: var(--m-toile); color: var(--m-encre);
+  font-family: var(--m-police); font-size: var(--m-t-corps); font-weight: var(--m-g-texte);
+  line-height: var(--m-lh-corps); letter-spacing: -.011em;
+  -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
+  font-optical-sizing: auto;
+}
+.m-base *, .m-base *::before, .m-base *::after { box-sizing: border-box; }
+.m-base :focus-visible { outline: none; box-shadow: var(--m-focus); }
+.m-base ::selection { background: var(--m-vert); color: var(--m-noir); }
+
+/* ---------- Typographie ---------- */
+.m-geant, .m-t1, .m-t2, .m-t3 { font-weight: var(--m-g-titre); margin: 0; text-wrap: balance; }
+.m-geant { font-size: var(--m-t-geant); line-height: .9; letter-spacing: var(--m-track-geant); font-weight: 850; }
+.m-t1 { font-size: var(--m-t-1); line-height: var(--m-lh-titre); letter-spacing: var(--m-track-titre); }
+.m-t2 { font-size: var(--m-t-2); line-height: 1.02; letter-spacing: -.03em; }
+.m-t3 { font-size: var(--m-t-3); line-height: 1.12; letter-spacing: -.02em; font-weight: 750; }
+.m-chapeau { font-size: var(--m-t-chapeau); line-height: 1.38; letter-spacing: -.016em; font-weight: 500; color: var(--m-encre-2); margin: 0; max-width: 34ch; text-wrap: pretty; }
+.m-chapeau b { color: var(--m-encre); font-weight: 700; }
+.m-texte { margin: 0; max-width: 60ch; text-wrap: pretty; }
+.m-petit { font-size: var(--m-t-petit); line-height: 1.43; color: var(--m-encre-2); margin: 0; }
+.m-micro { font-size: var(--m-t-micro); line-height: 1.33; color: var(--m-encre-3); font-weight: 600; letter-spacing: 0; margin: 0; }
+.m-chiffre { font-variant-numeric: tabular-nums; }
